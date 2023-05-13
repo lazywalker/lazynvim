@@ -25,8 +25,8 @@ function M.config()
 
   local diff = {
     "diff",
-    colored = false,
-    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+    colored = true,
+    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
     cond = hide_in_width,
   }
 
@@ -37,7 +37,7 @@ function M.config()
 
   local location = {
     "location",
-    padding = 0,
+    padding = { left = 0, right = 1 },
   }
 
   local spaces = function()
@@ -56,8 +56,13 @@ function M.config()
     sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch" },
-      lualine_c = { diagnostics },
-      lualine_x = { diff, spaces, "encoding", filetype },
+      lualine_c = { 
+        diagnostics,
+        diff,
+        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+        { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } }, 
+      },
+      lualine_x = { "encoding", filetype, "fileformat" },
       lualine_y = { location },
       lualine_z = { "progress" },
     },
