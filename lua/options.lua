@@ -1,3 +1,15 @@
+if vim.g.neovide then
+  vim.opt.linespace = 5
+-- Helper function for transparency formatting
+--   local alpha = function()
+--     return string.format("%x", math.floor(255 * vim.g.transparency or 0.8))
+--   end
+-- -- g:neovide_transparency should be 0 if you want to unify transparency of content and title bar.
+--   vim.g.neovide_transparency = 0.0
+--   vim.g.transparency = 0.8
+--   vim.g.neovide_background_color = "#0f1117" .. alpha()
+end
+
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
@@ -34,7 +46,7 @@ vim.opt.signcolumn = "yes"                      -- always show the sign column, 
 vim.opt.wrap = false                            -- display lines as one long line
 vim.opt.scrolloff = 8                           -- minimal number of screen lines to keep above and below the cursor
 vim.opt.sidescrolloff = 8                       -- minimal number of screen columns to keep to the left and right of the cursor if wrap is `false`
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+vim.opt.guifont = "CaskaydiaCove Nerd Font:h16"               -- the font used in graphical neovim applications
 vim.opt.fillchars.eob = " "                     -- show empty lines at the end of a buffer as ` ` {default `~`}
 vim.opt.shortmess:append "c"                    -- hide all the completion messages, e.g. "-- XXX completion (YYY)", "match 1 of 2", "The only match", "Pattern not found"
 vim.opt.whichwrap:append "<,>,[,],h,l"          -- keys allowed to move to the previous/next line when the beginning/end of line is reached
