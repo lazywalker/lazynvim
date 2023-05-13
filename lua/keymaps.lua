@@ -37,18 +37,26 @@ keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
+keymap("n", "<leader>q", "<cmd>Bdelete!<CR>", opts)
+
+-- Entering command_mode
+keymap("n", "<CR>", ":", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
 -- Insert --
 -- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Better delete a word backwards with Ctrl-Backspace.
+keymap("i", "<C-BS>", "<C-W>", opts)
 
 -- Plugins --
 
